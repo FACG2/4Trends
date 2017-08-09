@@ -1,5 +1,5 @@
 var fs = require('fs')
-var request = require('./apiReq.js')
+var getData = require('./apiReq.js')
 var qs = require('querystring')
 
 var ContentTypes = {
@@ -15,9 +15,7 @@ function handleHomeRoute(req, res) {
             res.end('<h1>Internel Server Error</h1>')
         } else {
             res.writeHead(200, { 'Content-Type': 'text/html' })
-            request(function(err, body) {
-            res.end(body)
-                })
+          res.end(data)
         }
     })
 }
@@ -42,13 +40,8 @@ function handleSearch(req, res) {
   var url = req.url
   var parts = url.split('?');
   var obj = qs.parse(parts[1]);
-  getData(obj.c, function(err,data) {
-    if(err){
-      console.log("error :" , err);
-    }
-    else{
+  getData(obj.c, function(data) {
       res.end(JSON.stringify(data))
-    }
   })
 }
 function handleNotFound(req, res) {
@@ -59,5 +52,6 @@ function handleNotFound(req, res) {
 module.exports = {
     handleHomeRoute: handleHomeRoute,
     handlePublic: handlePublic,
-    handleNotFound: handleNotFound
+    handleNotFound: handleNotFound,
+    handleSearch: handleSearch,
 }

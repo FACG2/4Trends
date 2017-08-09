@@ -10,21 +10,17 @@
 
 
     country.forEach(function(element) {
-        console.log(element);
         element.addEventListener('click', function() {
-            request("\search?c=" + element.alt, function(res) {
-                fill(JSON.parse(res))
+            request("\search?c=" + element.getAttribute('number'), function(res) {
+                fill(res)
             })
 
 
         });
     })
-
-    function makeReq() {}
-
     function fill(arr) {
-        for (let i = 1; i <= arr.length; ++i) {
-            document.querySelector('#item' + i).textContent = arr[i - 1];
+        for (let i = 1; i <= 10; i++) {
+           document.querySelector('#item' + i).textContent=arr[i-1]
         }
     }
 
