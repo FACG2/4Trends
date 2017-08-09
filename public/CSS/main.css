@@ -10,6 +10,7 @@ h2 {
     font-size: 30px;
     font-family: 'Poppins', sans-serif;
 }
+
 h3 {
     color: white;
     text-align: center;
@@ -42,13 +43,13 @@ body {
     justify-content: center;
 }
 
+
 /*flags  a:focus {
 border: 2px solid red;
 }*/
 
-#flags a:focus img{
-  border-bottom:  4px solid #2ecc71;
-
+#flags a:focus img {
+    border-bottom: 4px solid #2ecc71;
 }
 
 #bottomSection {
@@ -65,12 +66,12 @@ ul {
 ul li {
     cursor: pointer;
     font-family: 'Poppins', 'arial';
-
     position: relative;
     padding: 25px 8px 12px 40px;
     background: #eee;
     font-size: 20px;
     transition: 0.2s;
+    border-bottom: 1px dotted #2ecc71;
     /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -80,10 +81,50 @@ ul li {
     max-width: 546px;
 }
 
-ul li:nth-child(odd) {
-    background: #bdc3c7;
+ul a:nth-child(odd) {
+    background: red;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: hotpink;
 }
 
 ul li:hover {
     background: #2980b9;
+}
+
+.allPage {
+    background: #081421;
+    color: #d3d7de;
+    font-family: "Courier new";
+    font-size: 18px;
+    line-height: 1.5em;
+    cursor: default;
+}
+
+.code-area {
+    position: absolute;
+    padding: 2%;
+    width: 320px;
+    min-width: 320px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#home {
+    color: white;
+}
+
+#home:hover {
+    color: #1abc9c;
+}
+
+.code-area>span {
+    display: block;
 }

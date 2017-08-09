@@ -14,7 +14,7 @@ function router(req, res) {
 
     } else if (url.startsWith('/search')) {
         handlers.handleSearch(req, res)
-    }else {
+    } else {
 
         handlers.handleNotFound(req, res)
 
