@@ -4,7 +4,8 @@
   "description": "Here is whats trending on Google 🤘",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "src/Test/test.js" 
+
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,10 @@
   "homepage": "https://github.com/FACG2/4Trends#readme",
   "dependencies": {
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "shot": "^3.4.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
   }
 }
