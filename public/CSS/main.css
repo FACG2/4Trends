@@ -7,6 +7,14 @@ h2 {
     color: white;
     text-align: center;
     padding: 2%;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+h3 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -34,6 +42,15 @@ body {
     justify-content: center;
 }
 
+/*flags  a:focus {
+border: 2px solid red;
+}*/
+
+#flags a:focus img{
+  border-bottom:  4px solid #2ecc71;
+
+}
+
 #bottomSection {
     margin-top: 4%;
     margin-bottom: 2%;
@@ -47,10 +64,12 @@ ul {
 
 ul li {
     cursor: pointer;
+    font-family: 'Poppins', 'arial';
+
     position: relative;
     padding: 25px 8px 12px 40px;
     background: #eee;
-    font-size: 25px;
+    font-size: 20px;
     transition: 0.2s;
     /* make the list items unselectable */
     -webkit-user-select: none;
