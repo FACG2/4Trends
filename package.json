@@ -1,10 +1,12 @@
 {
   "name": "4trends",
   "version": "1.0.0",
-  "description": "Here is whats trending on Google 🤘",
+  "description": "Here is whats trending on Google ",
   "main": "index.js",
   "scripts": {
-    "test": "src/Test/test.js" 
+    "test": "src/Test/test.js",
+    "start": "node src/server.js"
+
 
   },
   "repository": {
