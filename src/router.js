@@ -1,20 +1,25 @@
-var handlers = require('./handlers.js');
+var fs = require('fs')
+var handlers = require('./handlers.js')
 
 function router(req, res) {
-  var url = req.url;
-  // home page >> show html page
-  if (url === '/') {
-    handlers.homehandler(req, res);
-    // when uesr click on button >> show output
-  } else if (url.startsWith('/click')) {
-    handlers.clickhandler(req, res);
+    var url = req.url
 
-  }
-  // any thing ^_^ , i think we dont need to use it
-  else {
-    handlers.notFoundhandler(req, res);
-  }
+    if (url === '/') {
 
+        handlers.handleHomeRoute(req, res)
+
+    } else if (url.startsWith('/public')) {
+
+        handlers.handlePublic(req, res)
+
+    } else if (url.startsWith('/search')) {
+        handlers.handleSearch(req, res)
+    }else {
+
+        handlers.handleNotFound(req, res)
+
+    }
 
 }
-module.exports = router;
+
+module.exports = router

@@ -1,9 +1,9 @@
-var http = require('http');
-var router = require('./router.js');
+var http = require('http')
+var router = require('./router.js')
 
-var server = http.createServer(router);
+const host = process.env.HOST || 'localhost'
+const port = process.env.PORT || 5000
 
+var server = http.createServer(router).listen(port)
 
-server.listen(process.env.PORT || 4000, function() {
-  console.log("your server work port 4000 ");
-});
+console.log('server running on: http://' + host + ':' + port)

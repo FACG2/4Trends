@@ -1,51 +1,63 @@
-var contentTypes = {
-  css: 'text/css',
-  html: 'text/html',
-  js: 'application/javascript',
-  ico: 'image/x-icon',
-  jpg: 'image/jpg'
-};
+var fs = require('fs')
+var request = require('./apiReq.js')
+var qs = require('querystring')
 
-var fs = require("fs");
-var queryString = require('querystring');
-var logic = require('./logic');
-
-
-function homehandler(req, res) {
-  fs.readFile(__dirname + "/../public/index.html", function(err, data) {
-    if (err) {
-      res.writeHead(500, {
-        'Content-Type': 'text/html'
-      });
-      res.end('<h1>Internal Server Error</h1>');
-    } else {
-      res.writeHead(200, {
-        'Content-Type': 'text/html'
-      });
-      res.end(data);
-    }
-  });
+var ContentTypes = {
+    css: 'text/css',
+    js: 'application/javascript',
+    ico: 'image/x-icon',
 }
 
-// function clickhandler(req, res) {
-//
-//
-// }
-//
-// function() {
-//
-//   // for css
-// }
+function handleHomeRoute(req, res) {
+    fs.readFile(__dirname + '/../public/index.html', function(err, data) {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' })
+            res.end('<h1>Internel Server Error</h1>')
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' })
+            request(function(err, body) {
+            res.end(body)
+                })
+        }
+    })
+}
 
-function notFoundhandler(req, res) {
-  res.writeHead(404, {
-    'Content-Type': 'text/html'
-  });
-  res.end('<h1>Not found</h1>');
+function handlePublic(req, res) {
+
+    var url = req.url
+    var parts = url.split('.')  // this line return 'main', 'css' and 'index', 'js'
+    var fileExtension = parts[parts.length - 1]  //this line return only 'css' and 'js'
+
+    fs.readFile(__dirname + '/..' + url, function(err, data) {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' })
+            res.end('<h1>Internel Server Error</h1>')
+        } else {
+            res.writeHead(200, { 'Content-Type': ContentTypes[fileExtension] })
+            res.end(data)
+        }
+    })
+}
+function handleSearch(req, res) {
+  var url = req.url
+  var parts = url.split('?');
+  var obj = qs.parse(parts[1]);
+  getData(obj.c, function(err,data) {
+    if(err){
+      console.log("error :" , err);
+    }
+    else{
+      res.end(JSON.stringify(data))
+    }
+  })
+}
+function handleNotFound(req, res) {
+    res.writeHead(404, { 'Content-Type': 'text/html' })
+    res.end('<h1>Not Found</h1>')
 }
 
 module.exports = {
-  homehandler: homehandler,
-//  clickhandler: clickhandler,l
-  notFoundhandler: notFoundhandler
+    handleHomeRoute: handleHomeRoute,
+    handlePublic: handlePublic,
+    handleNotFound: handleNotFound
 }
