@@ -1,6 +1,6 @@
 # 4Trends
 Here is whats hot on Google!
->Team: @EngAyoosh, @Ghadeer93, @mahmne, @aajour 🤘
+>Team: @EngAyoosh, @Ghadeer93, @mahmne, @aajour 
 
 # User Story:
 The word "trend" refers to a general direction in which something is developing or changing fastly.
@@ -15,7 +15,7 @@ The word "trend" refers to a general direction in which something is developing 
 ## How to use?
  * User Side :
 
-    * Open [URL]() for the website .
+    * Open [URL](https://fortrends.herokuapp.com/) for the website .
     * One click on the country flag is enough :bowtie:
 
   * Developer Side:
@@ -26,5 +26,5 @@ The word "trend" refers to a general direction in which something is developing 
 
       Run  `node src/server.js `
 
-     Navigate to http://localhost:4000/ in your browser
+     Navigate to http://localhost:5000/ in your browser
 
