@@ -14,7 +14,7 @@ The word "trend" refers to a general direction in which something is developing 
 > The splice() method changes the contents of an array by removing existing elements and/or adding new elements.
 
 ```javascript
-Array.splice(position_you_want_to_remove, number_of_items_to_remove)
+// Array.splice(position_you_want_to_remove, number_of_items_to_remove)
 
 var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
 
