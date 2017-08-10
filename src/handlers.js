@@ -41,9 +41,15 @@ function handlePublic(req, res) {
 function handleSearch(req, res) {
     var url = req.url
     var parts = url.split('?');
+
     var obj = qs.parse(parts[1]);
     getData(obj.c, function(data) {
-        res.end(JSON.stringify(data))
+        if (typeof data == "undefined" || !Array.isArray(data)) {
+            handleNotFound(req, res);
+        } else {
+            console.log("im here")
+            res.end(JSON.stringify(data))
+        }
     })
 }
 
