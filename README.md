@@ -1,5 +1,5 @@
 # 4Trends
-Here is whats hot on Google!
+Here is whats hot on Google! 🤘
 >Team: @EngAyoosh, @Ghadeer93, @mahmne, @aajour 
 
 # User Story:
