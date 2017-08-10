@@ -1,4 +1,3 @@
-var fs = require('fs')
 var handlers = require('./handlers.js')
 
 function router(req, res) {
