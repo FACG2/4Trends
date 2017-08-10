@@ -27,4 +27,6 @@ The word "trend" refers to a general direction in which something is developing 
       Run  `node src/server.js `
 
      Navigate to http://localhost:5000/ in your browser
+     
+     Big **THANKS** for: @abdabdhalees & @abeeralshaer & @shahenazmonia for their help :heart:
 
